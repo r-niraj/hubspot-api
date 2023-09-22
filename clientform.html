@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client form</title>
+</head>
+<body>
+
+    <form class="form" id="myForm">
+        <label for="user_name">Username</label>
+        <input type="text" name="user_name" id="user_name">
+
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password">
+        
+        <button type="submit"></button>
+
+    </form>
+<script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+
+<script>
+     $(document).ready(function () {                
+            $('#myForm').submit(function (event) {
+                event.preventDefault();                
+                var form = document.getElementById('myForm');
+                var formData = new FormData(form);
+               
+                $.ajax({
+                    url: 'https://hubspot-node-api.onrender.com/put-on-mail',
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {                      
+                        alert('Your form has been sent successfully.');
+                    },
+                    error: function (xhr, status, error) {                       
+                        alert('Your form was not sent successfully.');
+                        console.error(error);
+                    }
+                });
+            });
+        });
+</script>
+</body>
+</html>
