@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config()
 
 const cors = require('cors');
+app.use(express.json());
 
 app.use(cors());
 app.use(function (req, res, next) {
@@ -17,8 +18,6 @@ app.use(function (req, res, next) {
     }
     next();
 });
-
-app.use(express.json());
 
 app.get("/", (req,resp)=>{
     resp.json({message:"This is message for testing"});
