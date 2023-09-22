@@ -24,7 +24,8 @@
             $('#myForm').submit(function (event) {
                 event.preventDefault();                
                 var form = document.getElementById('myForm');
-                var formData = new FormData(form);
+                // var formData = new FormData(form);
+                var formData = JSON.stringify($("form").serializeArray())
                 
                 console.log(formData);
                 $.ajax({
