@@ -1,5 +1,6 @@
 const express = require ('express');
 const app = express();
+require('dotenv').config()
 
 app.use(express.json());
 
@@ -14,4 +15,4 @@ app.post('/put-on-mail', (req,resp)=>{
     resp.send("Success");
 });
 
-app.listen(5000);
+app.listen(process.env.port || 5000);
