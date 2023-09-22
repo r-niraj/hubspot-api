@@ -3,7 +3,6 @@ const app = express();
 
 app.use(express.json());
 
-
 app.get("/", (req,resp)=>{
     resp.json({message:"This is message for testing"});
 });
@@ -15,4 +14,4 @@ app.post('/put-on-mail', (req,resp)=>{
     resp.send("Success");
 });
 
-app.listen(5320);
+app.listen(5000);
