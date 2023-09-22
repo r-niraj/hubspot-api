@@ -58,7 +58,8 @@
 
                 console.log(formData);
                 $.ajax({
-                    url: 'https://hubspot-node-api.onrender.com/put-on-mail',
+                    // url: 'https://hubspot-node-api.onrender.com/put-on-mail',
+                    url: 'http://127.0.0.1:5000/put-on-mail',
                     method: 'POST',
                     data: formData,
                     processData: false,
