@@ -25,7 +25,8 @@
                 event.preventDefault();                
                 var form = document.getElementById('myForm');
                 var formData = new FormData(form);
-               
+                
+                console.log(formData);
                 $.ajax({
                     url: 'https://hubspot-node-api.onrender.com/put-on-mail',
                     method: 'POST',
