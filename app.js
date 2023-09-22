@@ -1,27 +1,27 @@
 const express = require ('express');
-const cors = require('cors');
 const app = express();
 require('dotenv').config()
+const cors = require('cors');
 
-app.use(express.json());
 
 app.use(cors());
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
-    res.header('Access-Control-Allow-Credentials', true);
-
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    
     if(req.method==='OPTIONS'){
-            res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-            res.header('Access-Control-Allow-Origin', '*');
-            res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
-            res.header('Access-Control-Allow-Credentials', true);
-            return res.status(200).json({});
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
+        res.setHeader('Access-Control-Allow-Credentials', true);
+        return res.status(200).json({});
     }
     next();
 });
 
+app.use(express.json());
 app.get("/", (req,resp)=>{
     resp.json({message:"This is message for testing"});
 });
