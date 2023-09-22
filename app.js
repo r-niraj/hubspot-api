@@ -10,9 +10,7 @@ app.get("/", (req,resp)=>{
 
 app.post('/put-on-mail', (req,resp)=>{
     let data = req.body;
-    console.log(data);
-
-    resp.send("Success");
+    resp.send(data);
 });
 
 app.listen(process.env.PORT || 5000);
