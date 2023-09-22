@@ -5,8 +5,8 @@ require('dotenv').config()
 const cors = require('cors');
 
 app.use(cors({
-    origin : "https://www.blueumbrella.com/",
-    
+    origin : "*",
+
 }));
 
 app.use(express.json());
