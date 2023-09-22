@@ -15,4 +15,4 @@ app.post('/put-on-mail', (req,resp)=>{
     resp.send("Success");
 });
 
-app.listen(process.env.port || 5000);
+app.listen(process.env.PORT || 5000);
