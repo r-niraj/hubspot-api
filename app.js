@@ -2,6 +2,13 @@ const express = require ('express');
 const app = express();
 require('dotenv').config()
 
+const cors = require('cors');
+
+app.use(cors({
+    origin : "https://www.blueumbrella.com/",
+    
+}));
+
 app.use(express.json());
 
 app.get("/", (req,resp)=>{
