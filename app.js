@@ -6,28 +6,17 @@ app.use(express.json());
 
 
 app.use(cors());
-// app.use(function (req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
-//     res.setHeader('Access-Control-Allow-Credentials', true);
-    
-//     if(req.method==='OPTIONS'){
-//         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//         res.setHeader('Access-Control-Allow-Origin', '*');
-//         res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
-//         res.setHeader('Access-Control-Allow-Credentials', true);
-//     }
-//     next();
-// });
 
-app.get("/", (req,resp)=>{
-    resp.json({message:"This is message for testing"});
+app.set('trust proxy', true);
+
+app.get("/user-ip", (req,resp)=>{
+    // resp.json({message:"This is message for testing"});
+    resp.send(req.ip);
 });
 
 app.post('/put-on-mail', (req,resp)=>{
-    let data = req.body;
-    resp.send(data);
+    const ip = req.ip;
+    const body = req.body;
 });
 
 app.listen(process.env.PORT || 5000);

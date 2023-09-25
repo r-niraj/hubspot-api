@@ -8,74 +8,11 @@
 </head>
 
 <body>
-
-    <form class="form" id="myForm">
-        <label for="user_name">Username</label>
-        <input type="text" name="user_name" id="user_name">
-
-        <label for="password">Password</label>
-        <input type="text" name="password" id="password">
-
-        <button type="submit">Submit</button>
-
-    </form>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-
     <script>
-        $(document).ready(function () {
-            $('#myForm').submit(function (event) {
-                event.preventDefault();
-                var form = document.getElementById('myForm');
-                // var formData = new FormData(form);
-                // var formData = JSON.stringify($("form").serializeArray());
-                var sendData ={
-                    "third_party_name": "Test for Thank",
-                    "third_party_website": "www.testddadata.com",
-                    "lenovo_address": "Five Wilton Park, Dublin D02FX04",
-                    "country_of_operation_lenovo": "Afghanistan",
-                    "first_name_lenovo": "dasda",
-                    "last_name_lenovo": "fdasfad",
-                    "email": "dsadad@mail.com",
-                    "language": "Chinese",
-                    "business_unit_lenovo": [
-                        "Group Operations",
-                        "Legal"
-                    ],
-                    "region_lenovo": "Africa",
-                    "describe_the_third_party_s_principal_business_activity_with_lenovo___motorola_": "Agent (non-sales) - Acting on behalf of Lenovo/Motorola",
-                    "anticipated_annual_value_of_prospective_business_with_lenovo___motorola_": "Less than USD $20,000",
-                    "is_the_third_party_a_government_employee_or_official_": "No",
-                    "will_the_third_party_sell_products_or_services": "Yes",
-                    "is_there_a_contract_associated_with_third_party_": "No",
-                    "clm_identifier": "asfaffaf",
-                    "who_is_the_lenovo___motorola_employee_responsible": "fdsf",
-                    "does_the_third_party_have": "No",
-                    "i_confirm_that": "Yes",
-                    "name_lenovo": "Niraj",
-                    "lenovo_email": "dafad@ledasdadsfnovomail.com",
-                    "hs_context": "{\"embedAtTimestamp\":\"1695386295066\",\"formDefinitionUpdatedAt\":\"1694439191767\",\"lang\":\"en\",\"embedType\":\"REGULAR\",\"clonedFromForm\":\"8dec3a4f-b0b4-485f-9b90-c5bc7c4989b3\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\",\"pageTitle\":\"Company Form Third-party Register\",\"pageUrl\":\"https://www.blueumbrella.com/en-us/company-form/lenovo-testin-mod\",\"pageId\":\"133905312151\",\"isHubSpotCmsGeneratedPage\":true,\"canonicalUrl\":\"https://www.blueumbrella.com/en-us/company-form/lenovo-testin-mod\",\"contentType\":\"standard-page\",\"hutk\":\"c25ed7772a7995097c674c36717ef5e5\",\"__hsfp\":2327326860,\"__hssc\":\"75871114.1.1695386297204\",\"__hstc\":\"75871114.c25ed7772a7995097c674c36717ef5e5.1695041679388.1695381182690.1695386297204.4\",\"formTarget\":\"#hs_form_target_form_694031455\",\"locale\":\"en\",\"timestamp\":1695386315462,\"originalEmbedContext\":{\"portalId\":\"5164326\",\"formId\":\"4b853ce4-6af8-4a03-b2e6-1f30a4213cc0\",\"region\":\"na1\",\"target\":\"#hs_form_target_form_694031455\",\"isBuilder\":false,\"isTestPage\":false,\"isPreview\":false,\"css\":\"\",\"isMobileResponsive\":true,\"formData\":{\"cssClass\":\"hs-form stacked hs-custom-form\"}},\"correlationId\":\"07ae7b2d-053d-4b5a-83a3-9bf629794fba\",\"renderedFieldsIds\":[\"third_party_name\",\"third_party_website\",\"lenovo_address\",\"country_of_operation_lenovo\",\"first_name_lenovo\",\"last_name_lenovo\",\"email\",\"language\",\"business_unit_lenovo\",\"region_lenovo\",\"describe_the_third_party_s_principal_business_activity_with_lenovo___motorola_\",\"anticipated_annual_value_of_prospective_business_with_lenovo___motorola_\",\"is_the_third_party_a_government_employee_or_official_\",\"will_the_third_party_sell_products_or_services\",\"is_there_a_contract_associated_with_third_party_\",\"clm_identifier\",\"who_is_the_lenovo___motorola_employee_responsible\",\"does_the_third_party_have\",\"i_confirm_that\",\"name_lenovo\",\"lenovo_email\"],\"captchaStatus\":\"NOT_APPLICABLE\",\"emailResubscribeStatus\":\"NOT_APPLICABLE\",\"isInsideCrossOriginFrame\":false,\"source\":\"forms-embed-1.3812\",\"sourceName\":\"forms-embed\",\"sourceVersion\":\"1.3812\",\"sourceVersionMajor\":\"1\",\"sourceVersionMinor\":\"3812\",\"_debug_allPageIds\":{\"analyticsPageId\":\"133905312151\",\"pageContextPageId\":\"133905312151\"},\"_debug_embedLogLines\":[{\"clientTimestamp\":1695386295229,\"level\":\"INFO\",\"message\":\"Retrieved customer callbacks used on embed context: [\\\"onFormReady\\\"]\"},{\"clientTimestamp\":1695386295229,\"level\":\"INFO\",\"message\":\"Retrieved pageContext values which may be overriden by the embed context: {\\\"pageTitle\\\":\\\"Company Form Third-party Register\\\",\\\"pageUrl\\\":\\\"https://www.blueumbrella.com/en-us/company-form/lenovo-testin-mod\\\",\\\"userAgent\\\":\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\\\",\\\"pageId\\\":\\\"133905312151\\\",\\\"isHubSpotCmsGeneratedPage\\\":true}\"},{\"clientTimestamp\":1695386295232,\"level\":\"INFO\",\"message\":\"Retrieved countryCode property from normalized embed definition response: \\\"IN\\\"\"},{\"clientTimestamp\":1695386297222,\"level\":\"INFO\",\"message\":\"Retrieved analytics values from API response which may be overriden by the embed context: {\\\"hutk\\\":\\\"c25ed7772a7995097c674c36717ef5e5\\\",\\\"canonicalUrl\\\":\\\"https://www.blueumbrella.com/en-us/company-form/lenovo-testin-mod\\\",\\\"contentType\\\":\\\"standard-page\\\",\\\"pageId\\\":\\\"133905312151\\\"}\"}]}"
-                }
-
-                var formData = JSON.stringify(sendData);
-
-                console.log(formData);
-                $.ajax({
-                    url: 'https://hubspot-node-api.onrender.com/put-on-mail',
-                    // url: 'http://127.0.0.1:5000/put-on-mail',
-                    method: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: "application/json",
-                    success: function (response) {
-                        alert('Your form has been sent successfully.');
-                    },
-                    error: function (xhr, status, error) {
-                        alert('Your form was not sent successfully.');
-                        console.error(error);
-                    }
-                });
-            });
-        });
+       fetch("https://r-niraj.github.io/hubspot-api/user-ip")
+            .then(res=> res.text())
+            .then(ip=> console.log(ip))
+            .catch(err=> console.log(err))
     </script>
 </body>
 
