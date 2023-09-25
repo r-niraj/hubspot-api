@@ -11,22 +11,25 @@ app.use(cors());
 
 app.set('trust proxy', true);
 
+let userIp;
+let payloadData;
+
 app.get("/", (req,resp)=>{
     resp.json({message:"This is message for testing"});
+    userIp= req.ip;
 });
 
+
+
 app.post('/put-on-mail', (req,resp)=>{
-    const userIp = req.ip;
-    let formData = req.body;
-
-
 
     satelize.satelize({ip:userIp}, function(err, payload) {
-        let userData = [payload, formData];
+        payloadData = payload;
     });
-
-
-    resp.send(userData);
+    
+    let formData = req.body;
+    allUserData = [userIp,payloadData,formData]
+    resp.send(allUserData);
 });
 
 app.listen(process.env.PORT || 5000);
