@@ -4,19 +4,29 @@ require('dotenv').config()
 const cors = require('cors');
 app.use(express.json());
 
+var satelize = require('satelize');
+
 
 app.use(cors());
 
 app.set('trust proxy', true);
 
-app.get("/user-ip", (req,resp)=>{
-    // resp.json({message:"This is message for testing"});
-    resp.send(req.ip);
+app.get("/", (req,resp)=>{
+    resp.json({message:"This is message for testing"});
 });
 
 app.post('/put-on-mail', (req,resp)=>{
-    const ip = req.ip;
-    const body = req.body;
+    const userIp = req.ip;
+    let formData = req.body;
+
+
+
+    satelize.satelize({ip:userIp}, function(err, payload) {
+        let userData = [payload, formData];
+    });
+
+
+    resp.send(userData);
 });
 
 app.listen(process.env.PORT || 5000);
