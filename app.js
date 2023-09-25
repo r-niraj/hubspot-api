@@ -14,12 +14,14 @@ app.set('trust proxy', true);
 let userIp;
 let payloadData;
 
-app.get("/", (req,resp)=>{
-    resp.json({message:"This is message for testing"});
-    userIp= req.ip;
-});
+const getApiCalled = ()=> {
+    app.get("/", (req,resp)=>{
+        resp.json({message:"This is message for testing"});
+        userIp= req.ip;
+    });
+}
 
-
+getApiCalled();
 
 app.post('/put-on-mail', (req,resp)=>{
 
